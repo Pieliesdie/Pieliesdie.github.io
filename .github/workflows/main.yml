@@ -19,10 +19,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - uses: actions/checkout@v2
+      
       - name: Uploading files to gh-pages branch
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
           folder: .
+          
       - name: Add .nojekyll file
         run: touch ./.nojekyll
